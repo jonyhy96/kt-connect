@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/alibaba/kt-connect/pkg/kt/cmd"
+	"github.com/jonyhy96/kt-connect/pkg/kt/cmd"
 	"github.com/spf13/pflag"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
 

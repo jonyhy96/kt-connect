@@ -5,8 +5,8 @@
 package connect
 
 import (
-	exec "github.com/alibaba/kt-connect/pkg/kt/exec"
-	util "github.com/alibaba/kt-connect/pkg/kt/util"
+	exec "github.com/jonyhy96/kt-connect/pkg/kt/exec"
+	util "github.com/jonyhy96/kt-connect/pkg/kt/util"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 )

@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/alibaba/kt-connect/pkg/apiserver/common"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/common"
 	"github.com/gin-gonic/gin"
 	"github.com/kubernetes/dashboard/src/app/backend/resource/container"
 	"github.com/kubernetes/dashboard/src/app/backend/resource/logs"

@@ -1,5 +1,5 @@
 * [Home](/en-us/)
-* [Feedback And Issue](https://github.com/alibaba/kt-connect/issues)
+* [Feedback And Issue](https://github.com/jonyhy96/kt-connect/issues)
 * [Downloads](/en-us/downloads)
 * KtCollections
   * KtConnect (Current)

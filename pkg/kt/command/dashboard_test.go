@@ -5,11 +5,11 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/alibaba/kt-connect/fake/kt/action"
+	"github.com/jonyhy96/kt-connect/fake/kt/action"
 	"github.com/golang/mock/gomock"
 
-	fakeKt "github.com/alibaba/kt-connect/fake/kt"
-	"github.com/alibaba/kt-connect/pkg/kt/options"
+	fakeKt "github.com/jonyhy96/kt-connect/fake/kt"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 	"github.com/urfave/cli"
 )
 

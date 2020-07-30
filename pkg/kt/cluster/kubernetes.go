@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strconv"
 
-	clusterWatcher "github.com/alibaba/kt-connect/pkg/apiserver/cluster"
-	"github.com/alibaba/kt-connect/pkg/kt/util"
-	"github.com/alibaba/kt-connect/pkg/kt/vars"
+	clusterWatcher "github.com/jonyhy96/kt-connect/pkg/apiserver/cluster"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/vars"
 	"github.com/rs/zerolog/log"
 	appv1 "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"

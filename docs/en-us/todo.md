@@ -1,6 +1,6 @@
 # TODO
 
-> If you have any idea please create feature request in [Github](https://github.com/alibaba/kt-connect/issues/new?assignees=&labels=&template=feature_request.md&title=)
+> If you have any idea please create feature request in [Github](https://github.com/jonyhy96/kt-connect/issues/new?assignees=&labels=&template=feature_request.md&title=)
 
 ## Commands
 

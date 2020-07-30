@@ -5,9 +5,9 @@
 package kt
 
 import (
-	cluster "github.com/alibaba/kt-connect/pkg/kt/cluster"
-	connect "github.com/alibaba/kt-connect/pkg/kt/connect"
-	exec "github.com/alibaba/kt-connect/pkg/kt/exec"
+	cluster "github.com/jonyhy96/kt-connect/pkg/kt/cluster"
+	connect "github.com/jonyhy96/kt-connect/pkg/kt/connect"
+	exec "github.com/jonyhy96/kt-connect/pkg/kt/exec"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 )

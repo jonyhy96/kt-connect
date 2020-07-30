@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/alibaba/kt-connect/pkg/kt/util"
-	"github.com/alibaba/kt-connect/pkg/kt/vars"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/vars"
 	"github.com/urfave/cli"
 	"k8s.io/client-go/kubernetes"
 )

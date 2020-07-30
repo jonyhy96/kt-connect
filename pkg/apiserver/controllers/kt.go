@@ -3,7 +3,7 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/alibaba/kt-connect/pkg/apiserver/common"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/common"
 	"github.com/gin-gonic/gin"
 	"k8s.io/apimachinery/pkg/labels"
 )

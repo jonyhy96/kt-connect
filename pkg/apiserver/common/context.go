@@ -1,7 +1,7 @@
 package common
 
 import (
-	"github.com/alibaba/kt-connect/pkg/apiserver/cluster"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/cluster"
 	"k8s.io/client-go/kubernetes"
 	v1 "k8s.io/client-go/listers/core/v1"
 	"k8s.io/client-go/rest"

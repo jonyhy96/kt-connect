@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/alibaba/kt-connect/pkg/apiserver/common"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/common"
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
 	networking "istio.io/api/networking/v1alpha3"

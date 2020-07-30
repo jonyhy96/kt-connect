@@ -3,9 +3,9 @@ package command
 import (
 	"path/filepath"
 
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 
-	"github.com/alibaba/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 	"github.com/urfave/cli"
 )
 

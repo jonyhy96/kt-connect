@@ -10,7 +10,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/alibaba/kt-connect/pkg/kt/vars"
+	"github.com/jonyhy96/kt-connect/pkg/kt/vars"
 	"github.com/rs/zerolog/log"
 	"golang.org/x/crypto/ssh"
 )

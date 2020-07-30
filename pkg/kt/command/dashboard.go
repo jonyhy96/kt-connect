@@ -1,9 +1,9 @@
 package command
 
 import (
-	"github.com/alibaba/kt-connect/pkg/kt"
-	"github.com/alibaba/kt-connect/pkg/kt/exec"
-	"github.com/alibaba/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/skratchdot/open-golang/open"

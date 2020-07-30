@@ -1,9 +1,9 @@
 package exec
 
 import (
-	"github.com/alibaba/kt-connect/pkg/kt/exec/kubectl"
-	"github.com/alibaba/kt-connect/pkg/kt/exec/ssh"
-	"github.com/alibaba/kt-connect/pkg/kt/exec/sshuttle"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec/kubectl"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec/ssh"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec/sshuttle"
 )
 
 // CliInterface ...

@@ -5,9 +5,9 @@
 package exec
 
 import (
-	kubectl "github.com/alibaba/kt-connect/pkg/kt/exec/kubectl"
-	ssh "github.com/alibaba/kt-connect/pkg/kt/exec/ssh"
-	sshuttle "github.com/alibaba/kt-connect/pkg/kt/exec/sshuttle"
+	kubectl "github.com/jonyhy96/kt-connect/pkg/kt/exec/kubectl"
+	ssh "github.com/jonyhy96/kt-connect/pkg/kt/exec/ssh"
+	sshuttle "github.com/jonyhy96/kt-connect/pkg/kt/exec/sshuttle"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 )

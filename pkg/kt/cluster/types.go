@@ -1,7 +1,7 @@
 package cluster
 
 import (
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 	appV1 "k8s.io/api/apps/v1"
 	coreV1 "k8s.io/api/core/v1"
 	"k8s.io/client-go/kubernetes"

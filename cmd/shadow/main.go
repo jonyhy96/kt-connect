@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/alibaba/kt-connect/pkg/proxy/dnsserver"
+	"github.com/jonyhy96/kt-connect/pkg/proxy/dnsserver"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 )

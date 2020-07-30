@@ -1,6 +1,6 @@
 package server
 
-import "github.com/alibaba/kt-connect/pkg/apiserver/common"
+import "github.com/jonyhy96/kt-connect/pkg/apiserver/common"
 
 // Init ...
 func Init(context common.Context) error {

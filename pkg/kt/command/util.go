@@ -7,10 +7,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/alibaba/kt-connect/pkg/kt"
-	"github.com/alibaba/kt-connect/pkg/kt/cluster"
-	"github.com/alibaba/kt-connect/pkg/kt/options"
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt"
+	"github.com/jonyhy96/kt-connect/pkg/kt/cluster"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 	"github.com/rs/zerolog/log"
 	"github.com/urfave/cli"
 )

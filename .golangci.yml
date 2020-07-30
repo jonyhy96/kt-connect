@@ -17,7 +17,7 @@ linters-settings:
   gocyclo:
     min-complecity: 10
   goimports:
-    local-prefixes: github.com/alibaba/kt-connect
+    local-prefixes: github.com/jonyhy96/kt-connect
   funlen:
     lines: 100
     statements: 50

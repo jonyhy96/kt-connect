@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/alibaba/kt-connect/pkg/apiserver/common"
-	"github.com/alibaba/kt-connect/pkg/apiserver/ws"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/common"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/ws"
 	"github.com/gin-gonic/gin"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/client-go/kubernetes/scheme"

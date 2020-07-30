@@ -3,16 +3,16 @@ package command
 import (
 	osexec "os/exec"
 
-	"github.com/alibaba/kt-connect/pkg/kt"
+	"github.com/jonyhy96/kt-connect/pkg/kt"
 
 	"runtime"
 
-	"github.com/alibaba/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	urfave "github.com/urfave/cli"
 
-	"github.com/alibaba/kt-connect/pkg/kt/exec"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec"
 )
 
 // NewCheckCommand return new check command

@@ -1,4 +1,4 @@
-module github.com/alibaba/kt-connect
+module github.com/jonyhy96/kt-connect
 
 go 1.12
 

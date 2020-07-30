@@ -1,10 +1,10 @@
 package kt
 
 import (
-	"github.com/alibaba/kt-connect/pkg/kt/cluster"
-	"github.com/alibaba/kt-connect/pkg/kt/connect"
-	"github.com/alibaba/kt-connect/pkg/kt/exec"
-	"github.com/alibaba/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/cluster"
+	"github.com/jonyhy96/kt-connect/pkg/kt/connect"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 )
 
 // CliInterface ...

@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/alibaba/kt-connect/pkg/kt/exec"
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 	"github.com/rs/zerolog/log"
 )
 

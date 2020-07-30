@@ -5,8 +5,8 @@
 package action
 
 import (
-	kt "github.com/alibaba/kt-connect/pkg/kt"
-	options "github.com/alibaba/kt-connect/pkg/kt/options"
+	kt "github.com/jonyhy96/kt-connect/pkg/kt"
+	options "github.com/jonyhy96/kt-connect/pkg/kt/options"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 )

@@ -3,9 +3,9 @@ package main
 import (
 	"os"
 
-	"github.com/alibaba/kt-connect/pkg/kt"
-	"github.com/alibaba/kt-connect/pkg/kt/command"
-	opt "github.com/alibaba/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt"
+	"github.com/jonyhy96/kt-connect/pkg/kt/command"
+	opt "github.com/jonyhy96/kt-connect/pkg/kt/options"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/urfave/cli"

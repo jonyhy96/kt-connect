@@ -1,6 +1,6 @@
 # Downloads And Install
 
-> You can downloads latest build from [Github Releases](https://github.com/alibaba/kt-connect/releases)
+> You can downloads latest build from [Github Releases](https://github.com/jonyhy96/kt-connect/releases)
 
 <!-- tabs:start -->
 

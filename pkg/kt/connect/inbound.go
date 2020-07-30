@@ -7,12 +7,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/alibaba/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 
-	"github.com/alibaba/kt-connect/pkg/kt/exec"
-	"github.com/alibaba/kt-connect/pkg/kt/exec/kubectl"
-	"github.com/alibaba/kt-connect/pkg/kt/exec/ssh"
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec/kubectl"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec/ssh"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 	"github.com/rs/zerolog/log"
 )
 

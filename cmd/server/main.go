@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/alibaba/kt-connect/pkg/apiserver/cluster"
-	"github.com/alibaba/kt-connect/pkg/apiserver/common"
-	"github.com/alibaba/kt-connect/pkg/apiserver/server"
-	"github.com/alibaba/kt-connect/pkg/apiserver/util"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/cluster"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/common"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/server"
+	"github.com/jonyhy96/kt-connect/pkg/apiserver/util"
 )
 
 func main() {

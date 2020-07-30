@@ -6,15 +6,15 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/alibaba/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 
-	fakeExec "github.com/alibaba/kt-connect/fake/kt/exec"
-	"github.com/alibaba/kt-connect/fake/kt/exec/kubectl"
-	"github.com/alibaba/kt-connect/fake/kt/exec/ssh"
-	"github.com/alibaba/kt-connect/fake/kt/exec/sshuttle"
+	fakeExec "github.com/jonyhy96/kt-connect/fake/kt/exec"
+	"github.com/jonyhy96/kt-connect/fake/kt/exec/kubectl"
+	"github.com/jonyhy96/kt-connect/fake/kt/exec/ssh"
+	"github.com/jonyhy96/kt-connect/fake/kt/exec/sshuttle"
 
-	fakeKt "github.com/alibaba/kt-connect/fake/kt"
-	"github.com/alibaba/kt-connect/fake/kt/action"
+	fakeKt "github.com/jonyhy96/kt-connect/fake/kt"
+	"github.com/jonyhy96/kt-connect/fake/kt/action"
 	"github.com/golang/mock/gomock"
 	"github.com/urfave/cli"
 )

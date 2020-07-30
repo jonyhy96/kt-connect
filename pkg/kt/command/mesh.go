@@ -5,13 +5,13 @@ import (
 	"os"
 	"strings"
 
-	"github.com/alibaba/kt-connect/pkg/kt"
+	"github.com/jonyhy96/kt-connect/pkg/kt"
 	v1 "k8s.io/api/apps/v1"
 
-	"github.com/alibaba/kt-connect/pkg/kt/cluster"
-	"github.com/alibaba/kt-connect/pkg/kt/connect"
-	"github.com/alibaba/kt-connect/pkg/kt/options"
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/cluster"
+	"github.com/jonyhy96/kt-connect/pkg/kt/connect"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"

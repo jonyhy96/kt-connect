@@ -1,9 +1,9 @@
 package connect
 
 import (
-	"github.com/alibaba/kt-connect/pkg/kt/exec"
-	"github.com/alibaba/kt-connect/pkg/kt/options"
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/exec"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 )
 
 // ShadowInterface shadow interface

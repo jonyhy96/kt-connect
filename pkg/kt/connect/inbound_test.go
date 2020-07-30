@@ -4,12 +4,12 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/alibaba/kt-connect/fake/kt/exec/kubectl"
-	"github.com/alibaba/kt-connect/fake/kt/exec/ssh"
+	"github.com/jonyhy96/kt-connect/fake/kt/exec/kubectl"
+	"github.com/jonyhy96/kt-connect/fake/kt/exec/ssh"
 	"github.com/golang/mock/gomock"
 
-	"github.com/alibaba/kt-connect/pkg/kt/options"
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 )
 
 func Test_inbound(t *testing.T) {

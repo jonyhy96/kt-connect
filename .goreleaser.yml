@@ -14,49 +14,11 @@ builds:
   - windows
   env:
   - CGO_ENABLED=0
-- id: "kubectl-connect"
-  main: ./cmd/kubectl-connect/main.go
-  binary: kubectl-connect
-  goos:
-  - linux
-  - darwin
-  - windows
-- id: "shadow"
-  main: ./cmd/shadow/main.go
-  binary: shadow
-  goos:
-  - linux
-  goarch:
-  - amd64
-dockers:
-- goos: linux
-  goarch: amd64
-  binaries:
-  - shadow
-  builds:
-  - shadow
-  image_templates:
-  - "registry.cn-hangzhou.aliyuncs.com/rdc-incubator/kt-connect-shadow:latest"
-  - "registry.cn-hangzhou.aliyuncs.com/rdc-incubator/kt-connect-shadow:{{ .Tag }}"
-  - "registry.cn-hangzhou.aliyuncs.com/rdc-incubator/kt-connect-shadow:v{{ .Major }}"
-  dockerfile: build/docker/shadow/Dockerfile_releaser
-  skip_push: false
-  extra_files:
-    - build/docker/shadow/run.sh
 archives:
 - id: ktctl
   builds:
   - ktctl
   name_template: 'ktctl_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm
-      }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}'
-  format: tar.gz
-  files:
-  - LICENSE
-  - README.md
-- id: kubectl-connect
-  builds:
-  - kubectl-connect
-  name_template: 'kubectl-connect_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm
       }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}'
   format: tar.gz
   files:
@@ -74,11 +36,10 @@ changelog:
     - '^test:'
 release:
   github:
-    owner: alibaba
-    name: kt-connect
+    owner: jonyhy96
+    name: ktctl
   ids:
     - ktctl
-    - kubectl-connect
   draft: true
   # If set to auto, will mark the release as not ready for production
   # in case there is an indicator for this in the tag e.g. v1.0.0-rc1

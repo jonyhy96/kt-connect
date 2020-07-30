@@ -4,14 +4,14 @@ import (
 	"os/exec"
 	"testing"
 
-	fakeExec "github.com/alibaba/kt-connect/fake/kt/exec"
-	"github.com/alibaba/kt-connect/fake/kt/exec/kubectl"
-	"github.com/alibaba/kt-connect/fake/kt/exec/ssh"
-	"github.com/alibaba/kt-connect/fake/kt/exec/sshuttle"
-	"github.com/alibaba/kt-connect/pkg/kt/options"
+	fakeExec "github.com/jonyhy96/kt-connect/fake/kt/exec"
+	"github.com/jonyhy96/kt-connect/fake/kt/exec/kubectl"
+	"github.com/jonyhy96/kt-connect/fake/kt/exec/ssh"
+	"github.com/jonyhy96/kt-connect/fake/kt/exec/sshuttle"
+	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 	"github.com/golang/mock/gomock"
 
-	"github.com/alibaba/kt-connect/pkg/kt/util"
+	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 )
 
 func TestShadow_Outbound(t *testing.T) {

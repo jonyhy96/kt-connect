@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/alibaba/kt-connect/pkg/kt/vars"
+	"github.com/jonyhy96/kt-connect/pkg/kt/vars"
 	"k8s.io/apimachinery/pkg/util/intstr"
 
 	mapset "github.com/deckarep/golang-set"
