@@ -37,7 +37,7 @@ changelog:
 release:
   github:
     owner: jonyhy96
-    name: ktctl
+    name: kt-connect
   ids:
     - ktctl
   draft: true
