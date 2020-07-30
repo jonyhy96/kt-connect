@@ -3,24 +3,25 @@ package command
 import (
 	"errors"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/jonyhy96/kt-connect/pkg/kt"
 
-	v1 "k8s.io/api/apps/v1"
-
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
+	v1 "k8s.io/api/apps/v1"
+	core "k8s.io/api/core/v1"
 
 	"github.com/jonyhy96/kt-connect/pkg/kt/cluster"
 	"github.com/jonyhy96/kt-connect/pkg/kt/connect"
-	"github.com/jonyhy96/kt-connect/pkg/kt/options"
+	optionspkg "github.com/jonyhy96/kt-connect/pkg/kt/options"
 	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 	urfave "github.com/urfave/cli"
 )
 
 // newExchangeCommand return new exchange command
-func newExchangeCommand(cli kt.CliInterface, options *options.DaemonOptions, action ActionInterface) urfave.Command {
+func newExchangeCommand(cli kt.CliInterface, options *optionspkg.DaemonOptions, action ActionInterface) urfave.Command {
 	return urfave.Command{
 		Name:  "exchange",
 		Usage: "exchange kubernetes deployment to local",
@@ -53,40 +54,80 @@ func newExchangeCommand(cli kt.CliInterface, options *options.DaemonOptions, act
 }
 
 //Exchange exchange kubernetes workload
-func (action *Action) Exchange(exchange string, cli kt.CliInterface, options *options.DaemonOptions) error {
+func (action *Action) Exchange(exchange string, cli kt.CliInterface, options *optionspkg.DaemonOptions) error {
 	ch := SetUpCloseHandler(cli, options, "exchange")
 
 	kubernetes, err := cluster.Create(options.KubeConfig)
 	if err != nil {
 		return err
 	}
-
+	randomString := util.RandomString(5)
 	app, err := kubernetes.Deployment(exchange, options.Namespace)
 	if err != nil {
 		return err
 	}
 
-	// record context inorder to remove after command exit
+	port, err := strconv.Atoi(options.ExchangeOptions.Expose)
+	if err != nil {
+		log.Error().Msgf("transform arguments --expose %s to int error %v", options.ExchangeOptions.Expose, err)
+		return err
+	}
+
+	workload := app.GetName() + "-kt-" + strings.ToLower(randomString)
+
+	sideCar := core.Container{
+		Name:    "sidecar" + "-gor-" + strings.ToLower(randomString),
+		Image:   options.SideCarImage,
+		Command: []string{"gor"},
+		Args: []string{
+			"--input-raw", ":" + options.ExchangeOptions.Expose,
+			"--output-http", "http://" + workload + ":" + options.ExchangeOptions.Expose,
+		},
+		SecurityContext: &core.SecurityContext{
+			Capabilities: &core.Capabilities{
+				Add: []core.Capability{"NET_ADMIN"},
+			},
+		},
+	}
+	app.Spec.Template.Spec.Containers = append(app.Spec.Template.Spec.Containers, sideCar)
+	log.Info().Msgf("inject gor sideCar to deployment")
+	updated, err := kubernetes.UpdateDeployment(options.Namespace, app)
+	if err != nil {
+		log.Error().Msgf("inject gor sideCar to deployment error %v", err)
+		return err
+	}
+
+	app = updated // update app to app with sideCar version
+
+	// record origin deployment for clean up
+	options.RuntimeOptions.Patch = &optionspkg.Patch{
+		DeploymentName: app.Name,
+		SideCar:        sideCar,
+	}
+	// record context in order to remove after command exit
 	options.RuntimeOptions.Origin = app.GetName()
 	options.RuntimeOptions.Replicas = *app.Spec.Replicas
 
-	workload := app.GetName() + "-kt-" + strings.ToLower(util.RandomString(5))
+	shadowPodLabels := getExchangeLabels(options.Labels, workload, app)
 
-	podIP, podName, sshcm, credential, err := kubernetes.GetOrCreateShadow(workload, options.Namespace, options.Image, getExchangeLabels(options.Labels, workload, app), options.Debug, false)
+	podIP, podName, sshcm, credential, err := kubernetes.GetOrCreateShadow(workload, options.Namespace, options.Image, shadowPodLabels, options.Debug, false)
 	log.Info().Msgf("create exchange shadow %s in namespace %s", workload, options.Namespace)
 
 	if err != nil {
 		return err
 	}
 
+	service, err := kubernetes.CreateService(workload, options.Namespace, port, shadowPodLabels)
+	if err != nil {
+		log.Error().Msgf("create exchange shadow's service error %v", err)
+		return err
+	}
+	log.Info().Msgf("create exchange shadow's service %s in namespace %s", service.Name, options.Namespace)
+
 	// record data
 	options.RuntimeOptions.Shadow = workload
 	options.RuntimeOptions.SSHCM = sshcm
-
-	down := int32(0)
-	if err = kubernetes.Scale(app, &down); err != nil {
-		return err
-	}
+	options.RuntimeOptions.Service = workload
 
 	shadow := connect.Create(options)
 	if err = shadow.Inbound(options.ExchangeOptions.Expose, podName, podIP, credential); err != nil {
@@ -110,11 +151,6 @@ func getExchangeLabels(customLabels string, workload string, origin *v1.Deployme
 		"kt":           workload,
 		"kt-component": "exchange",
 		"control-by":   "kt",
-	}
-	if origin != nil {
-		for k, v := range origin.Spec.Selector.MatchLabels {
-			labels[k] = v
-		}
 	}
 	// extra labels must be applied after origin labels
 	for k, v := range util.String2Map(customLabels) {

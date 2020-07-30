@@ -25,8 +25,14 @@ func AppFlags(options *options.DaemonOptions, version string) []cli.Flag {
 		cli.StringFlag{
 			Name:        "image,i",
 			Usage:       "Custom proxy image",
-			Value:       "registry.cn-hangzhou.aliyuncs.com/rdc-incubator/kt-connect-shadow:" + version,
+			Value:       "registry.cn-hangzhou.aliyuncs.com/rdc-incubator/kt-connect-shadow",
 			Destination: &options.Image,
+		},
+		cli.StringFlag{
+			Name:        "sideCarImage,s",
+			Usage:       "Custom side car image",
+			Value:       "jonyhy/gor",
+			Destination: &options.SideCarImage,
 		},
 		cli.BoolFlag{
 			Name:        "debug,d",

@@ -11,8 +11,10 @@ import (
 	"github.com/jonyhy96/kt-connect/pkg/kt/cluster"
 	"github.com/jonyhy96/kt-connect/pkg/kt/options"
 	"github.com/jonyhy96/kt-connect/pkg/kt/util"
+
 	"github.com/rs/zerolog/log"
 	"github.com/urfave/cli"
+	core "k8s.io/api/core/v1"
 )
 
 // NewCommands return new Connect Action
@@ -104,6 +106,25 @@ func CleanupWorkspace(cli kt.CliInterface, options *options.DaemonOptions) {
 		err := kubernetes.RemoveService(options.RuntimeOptions.Service, options.Namespace)
 		if err != nil {
 			log.Error().Err(err).Msg("delete service failed")
+		}
+	}
+	if options.RuntimeOptions.Patch != nil {
+		log.Info().Msgf("- hostkeeping resetting deployment to origin")
+		patch := options.RuntimeOptions.Patch
+		current, err := kubernetes.Deployment(patch.DeploymentName, options.Namespace)
+		if err != nil {
+			log.Error().Err(err).Msgf("get current deployment failed %v", err)
+		}
+		var containers []core.Container
+		for _, container := range current.Spec.Template.Spec.Containers {
+			if container.Name != patch.SideCar.Name {
+				containers = append(containers, container)
+			}
+		}
+		current.Spec.Template.Spec.Containers = containers
+		_, err = kubernetes.UpdateDeployment(options.Namespace, current)
+		if err != nil {
+			log.Error().Msgf("hostkeeping clean error %v", err)
 		}
 	}
 }

@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"path/filepath"
 
+	core "k8s.io/api/core/v1"
+
 	"github.com/jonyhy96/kt-connect/pkg/kt/util"
 	"github.com/jonyhy96/kt-connect/pkg/kt/vars"
 	"github.com/urfave/cli"
@@ -53,6 +55,13 @@ type RuntimeOptions struct {
 	Replicas  int32
 	Service   string
 	Clientset kubernetes.Interface
+	Patch     *Patch
+}
+
+// Patch deployment patch info
+type Patch struct {
+	DeploymentName string
+	SideCar        core.Container
 }
 
 type dashboardOptions struct {
@@ -66,6 +75,7 @@ type DaemonOptions struct {
 	Namespace        string
 	Debug            bool
 	Image            string
+	SideCarImage     string
 	Labels           string
 	KubeOptions      cli.StringSlice
 	RuntimeOptions   *RuntimeOptions
